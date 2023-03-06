@@ -1,30 +1,124 @@
-<div class="container mt-4">
-  <form [formGroup]="myForm">
-    <div class="row">
-      <div class="col col-md-6">
-        <label for="firstName" class="form-label">First Name</label>
-        <input
-          type="text"
-          formControlName="firstName"
-          class="form-control"
-          placeholder="First name"
-        />
+<div class="container mt-4 mb-4">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div formGroupName="basicInfo">
+      <div class="row">
+        <div class="col col-md-6">
+          <label
+            for="firstName"
+            class="form-label"
+            aria-label="first name"
+          ></label>
+          <input
+            type="text"
+            formControlName="firstName"
+            class="form-control"
+            placeholder="First name"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-md-6">
+          <label
+            for="lastName"
+            class="form-label"
+            aria-label="last name"
+          ></label>
+          <input
+            type="text"
+            formControlName="lastName"
+            class="form-control"
+            placeholder="Last name"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-md-6">
+          <label for="email" class="form-label" aria-label="email"></label>
+          <input
+            type="text"
+            formControlName="email"
+            class="form-control"
+            placeholder="E-mail"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-md-6">
+          <label for="age" class="form-label" aria-label="age"></label>
+          <input
+            type="number"
+            formControlName="age"
+            class="form-control"
+            placeholder="Age"
+          />
+        </div>
+      </div>
+    </div>
+    <div formGroupName="address">
+      <div class="row">
+        <div class="col col-md-6">
+          <label
+            for="street"
+            class="form-label"
+            aria-label="street name"
+          ></label>
+          <input
+            type="text"
+            formControlName="street"
+            class="form-control"
+            placeholder="Street"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-md-6">
+          <label
+            for="number"
+            class="form-label"
+            aria-label="street number"
+          ></label>
+          <input
+            type="number"
+            formControlName="number"
+            class="form-control"
+            placeholder="Number"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-md-6">
+          <label
+            for="postal"
+            class="form-label"
+            aria-label="postal code"
+          ></label>
+          <input
+            type="number"
+            formControlName="postal"
+            class="form-control"
+            placeholder="Postal"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col col-md-6">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input
-          type="text"
-          formControlName="lastName"
-          class="form-control"
-          placeholder="Last name"
-        />
+        <div formArrayName="colors">
+          <div *ngFor="let _ of colors; let idx = index">
+            <div [formGroupName]="idx">
+              <input type="text" formControlName="name" aria-label="color" />
+              <span (click)="removeColor(idx)">X</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col col-md-6"></div>
-    </div>
+    </div>-->
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
   </form>
 </div>
