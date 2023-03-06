@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.firstNameControl = new FormControl();
+    this.firstNameControl.setValue("Nadet");
     this.lastNameControl = new FormControl();
+    this.lastNameControl.patchValue("Lambi");
   }
 }
