@@ -1,30 +1,30 @@
 <div class="container mt-4">
-  <div class="row">
-    <div class="col col-md-6">
-      <label for="firstNameControl" class="form-label">First Name</label>
-      <input
-        type="text"
-        [formControl]="firstNameControl"
-        id="firstNameControl"
-        class="form-control"
-      />
+  <form [formGroup]="myForm">
+    <div class="row">
+      <div class="col col-md-6">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          formControlName="firstName"
+          class="form-control"
+          placeholder="First name"
+        />
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col col-md-6">
-      <label for="lastNameControl" class="form-label">Last Name</label>
-      <input
-        type="text"
-        [formControl]="lastNameControl"
-        id="lastNameControl"
-        class="form-control"
-      />
+    <div class="row">
+      <div class="col col-md-6">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          class="form-control"
+          placeholder="Last name"
+        />
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col col-md-6">
-      {{ firstNameControl.value }} {{ lastNameControl.value }}
+    <div class="row">
+      <div class="col col-md-6"></div>
     </div>
-  </div>
+  </form>
 </div>
